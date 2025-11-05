@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroTurbinas Colombia - Energía para Zonas Remotas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0d6efd, #0dcaf0); color: white; text-align: center; padding: 80px 20px; }
+        h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        p { font-size: 1.2rem; }
+        .btn { background: #28a745; color: white; padding: 14px 30px; font-size: 1.1rem; border: none; border-radius: 50px; cursor: pointer; margin-top: 20px; display: inline-block; text-decoration: none; }
+        .btn:hover { background: #218838; }
+        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; margin-bottom: 30px; color: #0d6efd; }
+        .benefits { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .benefit { background: white; padding: 25px; width: 300px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+        .benefit h3 { color: #0d6efd; margin-bottom: 10px; }
+        ol { max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+        li { margin: 15px 0; }
+        form { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        button { background: #0d6efd; color: white; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; width: 100%; }
+        button:hover { background: #0b5ed7; }
+        .whatsapp { text-align: center; margin-top: 20px; }
+        .whatsapp a { color: #25d366; font-weight: bold; text-decoration: none; }
+        footer { background: #343a40; color: white; text-align: center; padding: 25px; font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .benefit { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MicroTurbinas Colombia</h1>
+        <p>Energía limpia, accesible y sostenible para comunidades rurales y remotas.</p>
+        <a href="#contacto" class="btn">¡Solicita tu cotización GRATIS!</a>
+    </header>
+
+    <section id="sobre">
+        <h2>¿Por qué elegirnos?</h2>
+        <p>Llevamos energía renovable a zonas sin acceso a la red eléctrica. Nuestras microturbinas generan hasta <strong>200 kWh al día</strong> con bajo mantenimiento y <strong>ahorro de hasta 50% vs. diésel</strong>.</p>
+    </section>
+
+    <section id="beneficios">
+        <h2>Nuestros Beneficios</h2>
+        <div class="benefits">
+            <div class="benefit">
+                <h3>💰 Ahorro Real</h3>
+                <p>Reduce costos de $0.50/kWh vs. generadores diésel.</p>
+            </div>
+            <div class="benefit">
+                <h3>🌱 Sostenible</h3>
+                <p>Energía 100% renovable. Cero emisiones.</p>
+            </div>
+            <div class="benefit">
+                <h3>⚡ Rápida Instalación</h3>
+                <p>Instalamos en 3-5 días. Listo para usar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona">
+        <h2>¿Cómo funciona?</h2>
+        <ol>
+            <li>📍 Evaluamos tu comunidad y necesidades energéticas.</li>
+            <li>🚛 Transportamos e instalamos la microturbina.</li>
+            <li>⚡ ¡Energía limpia 24/7! Mantenimiento anual incluido.</li>
+        </ol>
+    </section>
+
+    <section id="contacto">
+        <h2>Contáctanos Hoy</h2>
+        <form action="https://formspree.io/f/xpwakjkw" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="tel" name="telefono" placeholder="Tu celular (ej: 3101234567)" required>
+            <input type="email" name="email" placeholder="Tu email" required>
+            <textarea name="mensaje" rows="4" placeholder="¿En qué zona necesitas energía? ¿Cuántas familias?"></textarea>
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+        <div class="whatsapp">
+            <p>O escríbenos por WhatsApp: <a href="https://wa.me/573001234567" target="_blank">+57 300 123 4567</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 MicroTurbinas Colombia | Energía para el futuro rural</p>
+    </footer>
+
+</body>
+</html>

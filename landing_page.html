@@ -3,92 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MicroTurbinas Colombia - Energía para Zonas Remotas</title>
+    <meta name="description" content="Venta e instalación de microturbinas para energía limpia en zonas rurales de Colombia. Ahorra hasta 50% vs. diésel. Proyecto desarrollado en la Universidad de Antioquia.">
+    <meta name="keywords" content="microturbinas, energía renovable, zonas rurales, Colombia, instalación, energía limpia, Universidad de Antioquia">
+    <meta name="author" content="MicroTurbinas Colombia - Desarrollado en la Universidad de Antioquia">
+    <!-- Open Graph para redes -->
+    <meta property="og:title" content="MicroTurbinas Colombia | Energía Limpia para Zonas Rurales">
+    <meta property="og:description" content="Energía accesible y sostenible para comunidades remotas. Desarrollado en la Universidad de Antioquia.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/65/Escudo-UdeA-Nombre-Completo.svg">
+    <meta property="og:url" content="https://tuusuario.github.io/microturbinas">
+    <meta property="og:type" content="website">
+    <title>MicroTurbinas Colombia | Energía Limpia para Zonas Rurales</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #0d6efd, #0dcaf0); color: white; text-align: center; padding: 80px 20px; }
-        h1 { font-size: 2.8rem; margin-bottom: 15px; }
-        p { font-size: 1.2rem; }
-        .btn { background: #28a745; color: white; padding: 14px 30px; font-size: 1.1rem; border: none; border-radius: 50px; cursor: pointer; margin-top: 20px; display: inline-block; text-decoration: none; }
-        .btn:hover { background: #218838; }
-        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        h2 { text-align: center; margin-bottom: 30px; color: #0d6efd; }
-        .benefits { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .benefit { background: white; padding: 25px; width: 300px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
-        .benefit h3 { color: #0d6efd; margin-bottom: 10px; }
-        ol { max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
-        li { margin: 15px 0; }
-        form { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
-        button { background: #0d6efd; color: white; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; width: 100%; }
-        button:hover { background: #0b5ed7; }
-        .whatsapp { text-align: center; margin-top: 20px; }
-        .whatsapp a { color: #25d366; font-weight: bold; text-decoration: none; }
-        footer { background: #343a40; color: white; text-align: center; padding: 25px; font-size: 0.9rem; }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .benefit { width: 100%; }
+        :root {
+            --primary: #0d6efd; --secondary: #0dcaf0; --success: #28a745; --dark: #212529; --light: #f8f9fa; --gray: #6c757d;
+            --accent: #198754; /* Verde UdeA */
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; background: var(--light); color: #333; line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        
+        /* Preloader */
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--light); z-index: 9999; display: flex; align-items: center; justify-content: center; }
+        #preloader .spinner { border: 8px solid #f3f3f3; border-top: 8px solid var(--primary); border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Header Hero */
+        .hero { background: linear-gradient(rgba(13, 110, 253, 0.9), rgba(13, 202, 240, 0.8)), url('https://images.unsplash.com/photo-1509395595643-3d9b8f5e2e8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; color: white; text-align: center; padding: 120px 20px; position: relative; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); animation: fadeIn 1s ease-out; }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 25px; animation: fadeIn 1.5s ease-out; }
+        .btn { background: var(--success); color: white; padding: 16px 36px; font-size: 1.2rem; font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-block; transition: 0.3s; box-shadow: 0 5px 15px rgba(40,167,69,0.4); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(40,167,69,0.5); }
+        
+        /* Animaciones */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Secciones */
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: var(--primary); position: relative; }
+        h2::after { content: ''; width: 80px; height: 4px; background: var(--secondary); display: block; margin: 15px auto 0; border-radius: 2px; }
+        
+        /* Beneficios con Contadores */
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .benefit { background: white; padding: 30px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.3s; }
+        .benefit:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+        .benefit i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+        .benefit h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--dark); }
+        .counter { font-size: 2rem; font-weight: bold; color: var(--success); }
+        
+        /* Equipo con Logo UdeA */
+        .team-logo { max-width: 300px; display: block; margin: 0 auto 30px; }
+        .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .member { background: white; padding: 30px; border-radius: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.3s; }
+        .member:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+        .member h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark); }
+        .member p { font-size: 1rem; color: var(--gray); }
+        
+        /* Cómo Funciona */
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .step { text-align: center; }
+        .step-number { width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 20px; }
+        
+        /* Galería */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { text-align: center; }
+        .gallery-item img { max-width: 100%; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); loading: lazy; }
+        .gallery-item p { margin-top: 10px; font-style: italic; color: var(--gray); }
+        
+        /* FAQ */
+        .faq { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #ddd; }
+        .faq-question { cursor: pointer; font-weight: bold; padding: 15px; background: #f8f9fa; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { display: none; padding: 15px; }
+        .faq-question i { transition: transform 0.3s; }
+        .faq-question.active i { transform: rotate(180deg); }
+        
+        /* Formulario */
+        #contacto { background: white; }
+        .form-container { max-width: 700px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        input, textarea { width: 100%; padding: 14px; margin: 12px 0; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+        button { background: var(--primary); color: white; padding: 16px; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer; width: 100%; transition: 0.3s; }
+        button:hover { background: #0b5ed7; }
+        #form-message { margin-top: 10px; color: var(--success); font-weight: bold; }
+        
+        /* WhatsApp Flotante */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 5px 15px rgba(37,211,102,0.4); z-index: 1000; animation: pulse 2s infinite; text-decoration: none; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+        
+        /* Footer con Logo UdeA */
+        footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; font-size: 0.9rem; }
+        footer a { color: var(--secondary); text-decoration: none; }
+        .footer-logo { max-width: 150px; margin: 20px auto; display: block; }
+        .social-links { margin-top: 20px; }
+        .social-links a { color: white; font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+        .social-links a:hover { color: var(--secondary); }
+        
+        /* Responsive */
+        @media (max-width: 768px) { .hero h1 { font-size: 2.3rem; } .hero { padding: 80px 20px; } h2 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- Preloader -->
+    <div id="preloader"><div class="spinner"></div></div>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/573246505157" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero -->
+    <header class="hero reveal">
         <h1>MicroTurbinas Colombia</h1>
-        <p>Energía limpia, accesible y sostenible para comunidades rurales y remotas.</p>
-        <a href="#contacto" class="btn">¡Solicita tu cotización GRATIS!</a>
+        <p>Energía limpia y accesible para comunidades rurales. <strong>Ahorra hasta 50% vs. diésel.</strong> Proyecto desarrollado en la Universidad de Antioquia.</p>
+        <a href="#contacto" class="btn">Cotiza GRATIS en 2 Minutos</a>
     </header>
 
-    <section id="sobre">
-        <h2>¿Por qué elegirnos?</h2>
-        <p>Llevamos energía renovable a zonas sin acceso a la red eléctrica. Nuestras microturbinas generan hasta <strong>200 kWh al día</strong> con bajo mantenimiento y <strong>ahorro de hasta 50% vs. diésel</strong>.</p>
-    </section>
-
-    <section id="beneficios">
+    <!-- Beneficios -->
+    <section id="beneficios" class="reveal">
         <h2>Nuestros Beneficios</h2>
         <div class="benefits">
             <div class="benefit">
-                <h3>💰 Ahorro Real</h3>
-                <p>Reduce costos de $0.50/kWh vs. generadores diésel.</p>
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Ahorro Real</h3>
+                <p>Reduce costos en <span class="counter" data-target="50">0</span>% vs. diésel.</p>
             </div>
             <div class="benefit">
-                <h3>🌱 Sostenible</h3>
-                <p>Energía 100% renovable. Cero emisiones.</p>
+                <i class="fas fa-leaf"></i>
+                <h3>100% Renovable</h3>
+                <p>Energía limpia sin emisiones.</p>
             </div>
             <div class="benefit">
-                <h3>⚡ Rápida Instalación</h3>
-                <p>Instalamos en 3-5 días. Listo para usar.</p>
+                <i class="fas fa-tools"></i>
+                <h3>Instalación Rápida</h3>
+                <p><span class="counter" data-target="5">0</span> días máximo.</p>
             </div>
         </div>
     </section>
 
-    <section id="como-funciona">
-        <h2>¿Cómo funciona?</h2>
-        <ol>
-            <li>📍 Evaluamos tu comunidad y necesidades energéticas.</li>
-            <li>🚛 Transportamos e instalamos la microturbina.</li>
-            <li>⚡ ¡Energía limpia 24/7! Mantenimiento anual incluido.</li>
-        </ol>
-    </section>
-
-    <section id="contacto">
-        <h2>Contáctanos Hoy</h2>
-        <form action="https://formspree.io/f/xpwakjkw" method="POST">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="tel" name="telefono" placeholder="Tu celular (ej: 3101234567)" required>
-            <input type="email" name="email" placeholder="Tu email" required>
-            <textarea name="mensaje" rows="4" placeholder="¿En qué zona necesitas energía? ¿Cuántas familias?"></textarea>
-            <button type="submit">Enviar Solicitud</button>
-        </form>
-        <div class="whatsapp">
-            <p>O escríbenos por WhatsApp: <a href="https://wa.me/573001234567" target="_blank">+57 300 123 4567</a></p>
+    <!-- Nuestro Equipo -->
+    <section id="equipo" style="background: #f1f3f5;" class="reveal">
+        <h2>Nuestro Equipo</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Escudo-UdeA-Nombre-Completo.svg" alt="Logo Universidad de Antioquia" class="team-logo">
+        <div class="team">
+            <div class="member">
+                <h3>Brahyan Osorio</h3>
+                <p><a href="mailto:brahyan.osorio@udea.edu.co">brahyan.osorio@udea.edu.co</a></p>
+            </div>
+            <div class="member">
+                <h3>Andruis Martinez</h3>
+                <p><a href="mailto:andruis.martinez@udea.edu.co">andruis.martinez@udea.edu.co</a></p>
+            </div>
+            <div class="member">
+                <h3>Olga Alejandra Mejia Quiroz</h3>
+                <p><a href="mailto:oalejandra.mejia@udea.edu.co">oalejandra.mejia@udea.edu.co</a></p>
+            </div>
         </div>
     </section>
 
+    <!-- Cómo Funciona -->
+    <section id="como-funciona" style="background: #f1f3f5;" class="reveal">
+        <h2>¿Cómo Funciona?</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Evaluación</h3>
+                <p>Visitamos tu zona y calculamos la potencia necesaria.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Instalación</h3>
+                <p>Transportamos e instalamos con equipo certificado.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Energía 24/7</h3>
+                <p>¡Luz constante! ROI en 5-7 años.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Microturbinas -->
+    <section id="galeria" class="reveal">
+        <h2>Galería de Microturbinas</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://ecoinventos.com/wp-content/uploads/2017/04/hidrotor.jpg" alt="Microturbina en zona remota de Colombia" loading="lazy">
+                <p>Microturbina generando energía renovable en áreas rurales.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://ecohabitar.org/wp-content/uploads/2025/09/microturbina1-1024x683.jpg" alt="Diagrama de microturbina para energía off-grid" loading="lazy">
+                <p>Diagrama técnico de sistema de microturbinas.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://ecohabitar.org/wp-content/uploads/2025/09/microturbina2.jpg" alt="Instalación de microturbina en Colombia" loading="lazy">
+                <p>Instalación en comunidades remotas.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://ecohabitar.org/wp-content/uploads/2025/09/microturbina3.jpg" alt="Beneficios ambientales de microturbinas" loading="lazy">
+                <p>Impacto sostenible en el medio ambiente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background: #f1f3f5;" class="reveal">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question">¿Qué es una microturbina? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Una microturbina es un generador compacto de energía renovable, ideal para zonas sin red eléctrica.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto cuesta? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Desde $5.000 USD, dependiendo del tamaño. Cotiza gratis.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Es legal en Colombia? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Sí, cumplimos con normas de la CREG y MinEnergía.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="reveal">
+        <h2>¡Hablemos de Tu Proyecto!</h2>
+        <div class="form-container">
+            <form id="contact-form" action="https://formspree.io/f/xanyvagy" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre completo" required aria-label="Nombre">
+                <input type="tel" name="telefono" placeholder="Celular (ej: 3101234567)" required aria-label="Teléfono">
+                <input type="email" name="email" placeholder="Email" required aria-label="Email">
+                <input type="text" name="zona" placeholder="¿En qué municipio o vereda?" required aria-label="Zona">
+                <textarea name="mensaje" rows="4" placeholder="¿Cuántas familias? ¿Necesitas luz para casa, escuela, finca?" aria-label="Mensaje"></textarea>
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+            <p id="form-message"></p>
+            <p style="text-align: center; margin-top: 20px; color: var(--gray);">
+                O escríbenos al WhatsApp: <a href="https://wa.me/573246505157" style="color: #25d366; font-weight: bold;">+57 324 650 5157</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 MicroTurbinas Colombia | Energía para el futuro rural</p>
+        <p>© 2025 <strong>MicroTurbinas Colombia</strong> | Energía para el futuro rural</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Escudo-UdeA-Nombre-Completo.svg" alt="Logo Universidad de Antioquia" class="footer-logo">
+        <p>Desarrollado en la Universidad de Antioquia</p>
+        <p><a href="mailto:info@microturbinas.co">info@microturbinas.co</a> | Todos los derechos reservados</p>
+        <div class="social-links">
+            <a href="https://facebook.com/tu-pagina" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/tu-pagina" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/tu-empresa" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => { document.getElementById('preloader').style.display = 'none'; });
+        
+        // Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        window.addEventListener('scroll', () => {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const revealTop = el.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 100) el.classList.add('active');
+            });
+        });
+        
+        // Contadores
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / 200;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 10);
+                } else counter.innerText = target;
+            };
+            updateCount();
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(q => {
+            q.addEventListener('click', () => {
+                q.classList.toggle('active');
+                const answer = q.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+        
+        // Form Validation & Message
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (e) => {
+            if (!form.checkValidity()) return;
+            document.getElementById('form-message').innerText = '¡Enviado! Te contactaremos pronto.';
+        });
+    </script>
 
 </body>
 </html>
